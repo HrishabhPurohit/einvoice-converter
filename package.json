@@ -37,7 +37,7 @@
       "category": "public.app-category.business"
     },
     "win": {
-      "target": "zip"
+      "target": "portable"
     },
     "linux": {
       "target": "AppImage",

@@ -56,7 +56,6 @@ jobs:
           name: ${{ matrix.os }}-build
           path: |
             dist/*.exe
-            dist/*.zip
             dist/*.dmg
             dist/*.AppImage
             dist/*.deb
