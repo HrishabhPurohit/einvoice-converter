@@ -41,20 +41,8 @@
       "icon": "assets/icon.png"
     },
     "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": ["x64"]
-        },
-        {
-          "target": "portable",
-          "arch": ["x64"]
-        }
-      ],
-      "icon": "assets/icon.png",
-      "sign": null,
-      "verifyUpdateCodeSignature": false,
-      "signDlls": false
+      "target": "zip",
+      "icon": "assets/icon.png"
     },
     "linux": {
       "target": "AppImage",
