@@ -12,6 +12,9 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
+    
+    env:
+      CI: true
 
     steps:
       - name: Checkout code
