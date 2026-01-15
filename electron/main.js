@@ -11,8 +11,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
-    },
-    icon: path.join(__dirname, '../assets/icon.png')
+    }
   });
 
   const isDev = process.env.ELECTRON_START_URL !== undefined;
@@ -21,13 +20,18 @@ function createWindow() {
     mainWindow.loadURL(process.env.ELECTRON_START_URL);
     mainWindow.webContents.openDevTools();
   } else {
-    mainWindow.loadURL(
-      url.format({
-        pathname: path.join(__dirname, '../build/index.html'),
-        protocol: 'file:',
-        slashes: true
-      })
-    );
+    const startUrl = url.format({
+      pathname: path.join(__dirname, '../build/index.html'),
+      protocol: 'file:',
+      slashes: true
+    });
+    mainWindow.loadURL(startUrl);
+    
+    // Debug: Show what path we're trying to load
+    mainWindow.webContents.on('did-fail-load', (event, errorCode, errorDescription) => {
+      console.error('Failed to load:', startUrl);
+      console.error('Error:', errorCode, errorDescription);
+    });
   }
 
   mainWindow.on('closed', () => {

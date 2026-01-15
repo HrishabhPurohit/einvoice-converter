@@ -25,13 +25,6 @@
     "extraMetadata": {
       "main": "electron/main.js"
     },
-    "extraResources": [
-      {
-        "from": "node_modules",
-        "to": "node_modules",
-        "filter": ["**/*"]
-      }
-    ],
     "mac": {
       "target": "dmg",
       "category": "public.app-category.business"
