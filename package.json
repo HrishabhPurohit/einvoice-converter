@@ -32,17 +32,12 @@
         "filter": ["**/*"]
       }
     ],
-    "directories": {
-      "buildResources": "assets"
-    },
     "mac": {
       "target": "dmg",
-      "category": "public.app-category.business",
-      "icon": "assets/icon.png"
+      "category": "public.app-category.business"
     },
     "win": {
-      "target": "zip",
-      "icon": "assets/icon.png"
+      "target": "zip"
     },
     "linux": {
       "target": "AppImage",
